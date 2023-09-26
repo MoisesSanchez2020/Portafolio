@@ -16,6 +16,7 @@
 
     <!-- Custom CSS -->
     <link href="css/agency.css" rel="stylesheet">
+    <!--<link href="css/special.css" rel="stylesheet">-->
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -340,119 +341,244 @@
 
 
 
-<!-- Packages Section -->
-<section id="packages" class="bg-light-gray">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2 class="section-heading">Our Web Development Packages</h2>
-                <h3 class="section-subheading text-muted">Choose the best plan that fits your needs.</h3>
-            </div>
-        </div>
-        <div class="row package-row" style="display: flex; justify-content: center;">
+ 
+    <style>
+        /* This ensures equal heights for direct children of .equal-height */
+        .equal-height {
+            display: flex;  /* Using flexbox */
+            flex-wrap: wrap;  /* Allows items to wrap onto the next line */
+        }
+        
+        .equal-height > div {
+            flex: 1;  /* Makes each child take equal width */
+            display: flex;
+            flex-direction: column;  /* Stacks child elements of the div vertically */
+        }
+        
+    
+        .service-container {
+            flex: 1;
+            /*flex: 1;   Makes the child div grow to maximum available height */
+            display: grid;
+            gap: 1.25em;
+            min-height: 300px;
+            max-width: 100%;
+            border-radius: 10px;
+            padding: 3px;
+            background-color: #2b2b2b;
+        }
+    
+        .service-container.border-white {
+            border: 1px solid #eceff133;
+        }
+      
+    
+        .service-container.border-muted {
+            border: 1px solid #eceff133;
+        }
+    
+        .section-heading, .section-subheading {
+            color: 1px #eceff133;
+        }
+    
+        .btn-light {
+            background-color: #040404;
+            color: #f8f6f6;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        ul.list-unstyled li {
+            color: #fff;  /* Adding color to the <li> tags */
+                text-align: left;
+                padding-left: 50px;  /* Adds padding to the left side of each <li> */
+                margin-bottom: 10px; 
+                
+        }
+          /* ... previous styles ... */
 
-            <!-- Premium Package -->
-            <div class="col-sm-4" style="flex: 1;">
-                <div class="service-container" style="perspective: 1000px; min-height: 300px; max-width: 100%;">
-                    <div class="service-offering" style="transition: transform 0.8s; transform-style: preserve-3d; background-color: #DA1219; border: 1px solid #fff; padding: 20px; border-radius: 10px; min-height: 300px;" onmouseover="this.style.transform='rotateY(180deg)'" onmouseout="this.style.transform='rotateY(0deg)'">
-                        <div class="service-front" style="backface-visibility: hidden;">
-                            <h4 style="font-size: 20px; color:#fff;">Premium Package</h4>
-                            <p class="text-muted" style="color: #fff;">Starting at $2500</p>
-                            <ul class="list-features" style="color: #fff;">
-                                <li>Custom Design</li>
-                                <li>SEO Optimization</li>
-                                <li>24/7 Support</li>
-                                <li>Content Strategy</li>
-                                <li>Mobile Responsiveness</li>
-                                <li>Social Media Integration</li>
-                                <li>Analytics Setup</li>
-                                <li>E-commerce Integration</li>
-                                <li>Unlimited Revisions</li>
-                                <li>Performance Optimization</li>
-                                <li>Accessibility Compliance</li>
-                            </ul>
-                        </div>
-                        <div class="service-back" style="background-color: #DA1219; border: 1px solid #fff; padding: 20px; border-radius: 10px; backface-visibility: hidden; transform: rotateY(180deg);">
-                            <!-- BOOK button for Premium Package -->
-                            <button style="background-color: #DA1219; color: #fff; padding: 20px 40px; border-radius: 5px; font-size: 24px; position: relative; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                                <a href="#contact" style="color: #fff; text-decoration: none;">BOOK</a>
-                            </button>
-                            
-                        </div>
-                    </div>
+    .service-container {
+        /* ... existing styles ... */
+        --hue: 165;
+        --saturation: 82.26%;
+        --lightness: 51.37%;
+        transition: 400ms background ease;
+    }
+    
+    .service-container:nth-child(1) {
+        --hue: 165;
+        --saturation: 82.26%;
+        --lightness: 51.37%;
+    }
+
+    .service-container:nth-child(2) {
+        --hue: 291.34;
+        --saturation: 95.9%;
+        --lightness: 61.76%;
+    }
+
+    .service-container:nth-child(3) {
+        --hue: 338.69;
+        --saturation: 100%;
+        --lightness: 48.04%;
+    }
+
+    .service-container:hover {
+        --lightness: 95%;
+        background: hsla(var(--hsl), 0.1);
+    }
+
+    .service-container {
+        /* ... existing styles ... */
+        transition: 400ms background ease;
+    }
+    
+    /* Premium (Red) */
+    .service-container:nth-child(1) {
+        --hue: 0; /* Red hue */
+        --saturation: 100%;
+        --lightness: 50%;
+    }
+
+    /* Gold */
+    .service-container:nth-child(2) {
+        --hue: 50; /* Gold hue (approximately) */
+        --saturation: 100%;
+        --lightness: 50%;
+    }
+
+    /* Silver (Using a lighter shade of gray to represent silver) */
+    .service-container:nth-child(3) {
+        --hue: 0;
+        --saturation: 0%;
+        --lightness: 75%;
+    }
+
+    .service-container:hover {
+        --lightness: 60%; /* Darkening the color slightly on hover */
+        background: hsla(var(--hsl), 0.1);
+    }
+
+
+
+
+        .card__bullets {
+            line-height: 1.4;
+          }
+      
+          .card__bullets li::before {
+            display: inline-block;
+            content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' width='16' title='check' fill='%23dddddd'%3E%3Cpath d='M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z' /%3E%3C/svg%3E");
+            transform: translatey(0.25ch);
+            margin-right: 1ch;
+          }
+    
+        /* Media query for smaller screens */
+        @media (max-width: 768px) {
+            .service-container {
+                min-height: 450px; /* Adjust this value based on your needs */
+            }
+        }
+    </style>
+    
+    <section id="packages" class="bg-light-gray-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading" style="color: #fff;">Our Web Development Packages</h2>
+                    <h3 class="section-subheading text-muted" style="color: #fff;">Choose the best plan that fits your needs.</h3>
                 </div>
             </div>
-            <!-- Gold Package -->
-            <div class="col-sm-4" style="flex: 1;">
-                <div class="service-container" style="perspective: 1000px; min-height: 300px; max-width: 100%;">
-                    <div class="service-offering" style="transition: transform 0.8s; transform-style: preserve-3d; background-color: #F8BC15; border: 1px solid  #ebd9d9 ; padding: 20px; border-radius: 10px; min-height: 300px;" onmouseover="this.style.transform='rotateY(180deg)'" onmouseout="this.style.transform='rotateY(0deg)'">
-                        <div class="service-front" style="backface-visibility: hidden;">
-                            <h4 style="font-size: 24px; color:#fff">Gold Package</h4>
-                            <p class="text-muted"  style="color: #fff;">Starting at $2000</p>
-                            <ul class="list-features" style="color: #fff;">
-                                <li>Template Design</li>
-                                <li>Basic SEO</li>
-                                <li>Email Support</li>
-                                <li>Mobile-Friendly Design</li>
-                                
-                                <li>Basic Analytics Setup</li>
-                                <li>Up to 3 Pages</li>
-                                <li>3 Revisions</li>
-                                <li>Contact Form</li>
-                                <li>1-Month Free Maintenance</li>
-                                <li>Performance Optimization</li>
-                             <li>Maps Integration</li>
-                            </ul>
-                            
-                        </div>
-                        <div class="service-back" style="background-color: ##F8BC15; border: 1px solid #fff; padding: 20px; border-radius: 10px; backface-visibility: hidden; transform: rotateY(180deg);">
-                            <!-- BOOK button for Gold Package -->
-                            <button style="background-color: #fd1111; color: #fff; padding: 20px 40px; border-radius: 5px; font-size: 24px; position: relative; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                                <a href="#contact" style="color: #fff; text-decoration: none;">BOOK</a>
-                            </button>
-                            
-                        </div>
+            <div class="row package-row text-center equal-height">
+                <!-- Premium Package -->
+                <div class="col-12 col-md-4 mb-4">
+                    <div class="service-container border-white premium">
+                        <h1 style="font-size: 25px; color:#fff;">Premium Package</h1>
+                        <h4 class="text-muted" style="color: #fff;">Starting at $2499</h4>
+                        <ul class="list-unstyled text-white card__bullets"> <!-- Added the class card__bullets here -->
+                            <!-- Your list items -->
+                         
+                            <!-- ... rest of the items ... -->
+                            <li>Custom Design</li>
+                            <li>SEO Optimization</li>
+                            <li>24/7 Support</li>
+                            <li>Content Strategy</li>
+                            <li>Mobile Responsiveness</li>
+                            <li>Social Media Integration</li>
+                            <li>E-commerce Integration</li>
+                            <li>Unlimited Revisions</li>
+                            <li>Performance Optimization</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-light mt-2">Book Now</a> 
                     </div>
                 </div>
-            </div>
-            <!-- Silver Package -->
-            <div class="col-sm-4" style="flex: 1;">
-                <div class="service-container" style="perspective: 1000px; min-height: 300px; max-width: 100%;">
-                    <div class="service-offering" style="transition: transform 0.8s; transform-style: preserve-3d; background-color: #8AC926; border: 1px solid #ebd9d9; padding: 20px; border-radius: 10px; min-height: 300px;" onmouseover="this.style.transform='rotateY(180deg)'" onmouseout="this.style.transform='rotateY(0deg)'">
-                        <div class="service-front" style="backface-visibility: hidden;">
-                            <h4 style="font-size: 20px; color:#fff">Silver Package</h4>
-                             <p class="text-muted" style="color: #fff;">Starting at $1000</p>
-                             <ul class="list-features" style="color: #fff;">
-                             <li>Basic Design</li>
-                             <li>No SEO</li>
-                             <li>Forum Support</li>
-                             <li>Responsive Layout</li>
-                             <li>Single page Application</li>
-                             <li>1 Revision</li>
-                             <li>Email Contact Form</li> 
-                           </ul>
-
-                        </div>
-                        <div class="service-back" style="background-color: #8AC926; border: 1px solid #ccc; padding: 20px; border-radius: 10px; backface-visibility: hidden; transform: rotateY(180deg);">
-                            <!-- BOOK button for Silver Package -->
-                            <button style="background-color: #fd1111; color: #fff; padding: 20px 40px; border-radius: 5px; font-size: 24px; position: relative; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                                <a href="#contact" style="color: #fff; text-decoration: none;">BOOK</a>
-                            </button>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <br><br>
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 text-center">
-                <h4 class="large text-muted" style="text-align: center;">Explore tailor-made packages. Contact us for details</h4>
-
-            </div>
-        </div>
+    
+                <!-- Gold Package -->
+<div class="col-12 col-md-4 mb-4">
+    <div class="service-container border-muted gold">
+        <h1 style="font-size: 25px; color:#fff;">Gold Package</h1>
+        <h4 class="text-muted" style="color: #fff;">Starting at $1999</h4>
+        <ul class="list-unstyled text-white card__bullets">
+            <li>Template Design</li>
+            <li>Basic SEO</li>
+            <li>Email Support</li>
+            <li>Mobile-Friendly Design</li>
+            <li>Up to 3 Pages</li>
+            <li>3 Revisions</li>
+            <li>Contact Form</li>
+            <li>1-Month Free Maintenance</li>
+            <!-- ... rest of the items ... -->
+        </ul>
+        <a href="#contact" class="btn btn-light mt-2">Book Now</a>
     </div>
-</section>
+</div>
+
+    
+               <!-- Silver Package -->
+<div class="col-12 col-md-4 mb-4">
+    <div class="service-container border-muted silver">
+        <h1 style="font-size: 25px; color:#fff;">Silver Package</h1>
+        <h4 class="text-muted" style="color: #fff;">Starting at $999</h4>
+        <ul class="list-unstyled text-white card__bullets">
+            <li>Basic Design</li>
+            <li>No SEO</li>
+            <li>Forum Support</li>
+            <li>Responsive Layout</li>
+            <li>Single page Application</li>
+            <li>1 Revision</li>
+            <li>Email Contact Form</li>
+            <li>Performance Optimization</li>
+            <!-- ... rest of the items ... -->
+        </ul>
+        <a href="#contact" class="btn btn-light mt-2">Book Now</a>
+    </div>
+</div>
+
+
+
+            </div>
+        </div>
+    </section>
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -751,6 +877,7 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/agency.js"></script>
+    <script src="js/special.js"></script>
 
 </body>
 
